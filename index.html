@@ -1,9 +1,21 @@
 <html>
 <head>
 	<title>Shopping List</title>
-	<script type="text/javascript" src="shoppingJS.js"></script>
+<style>
+	#totalStyle {font-size:20px;
+	border-top: solid 2px;
+	float:left;}
+	#totalList {font-size:20px;}
+	
+	</style>
 </head>
 <body>
-
+<form>
+	<p> Add Item: </p>
+	<input type="text" name="itemAdd" id="newItemName">
+	<p> Add Price: </p>
+	<input type="text" name="itemPrice" id="newItemPrice">
+	<input type="submit" name="itemSubmit" id="submit">
+<script type="text/javascript" src="shoppingJS.js"></script>	
 </body>
 </html>

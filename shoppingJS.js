@@ -9,22 +9,38 @@ var groceryList=[
  {name: "Milk",
  price:2.50},
  {name: "Eggs",
- price:1.50}
+ price:1.50},
+ {name:"Lettuce",
+  price:3.00}
 ];
 
-//FOR LOOP 
-//for (var i=0; i<groceryList.length;i++){
+for (var i=0; i<groceryList.length;i++){
 
-//  total+=groceryList[i].price;
+total+=groceryList[i].price;
  
-//  console.log(groceryList[i].name + "  $"+groceryList[i].price);
+console.log(groceryList[i].name + "  $"+groceryList[i].price.toFixed(2));
+ 
+var printedList = document.createElement('div');
+printedList.id = "totalList";
 
-// }
-//   console.log("Total $"+total);
+printedList.innerHTML = groceryList[i].name + "  $"+ groceryList[i].price.toFixed(2);
 
-//FOR EACH LOOP
-var total = 0;
-groceryList.forEach(function(item){
-	console.log(item.name + " - $" + item.price);
-	total += item.price;
-});
+document.body.appendChild(printedList);
+
+};
+
+var printedTotal = document.createElement('div');
+printedTotal.id="totalStyle";
+printedTotal.innerHTML = "Total $"+total.toFixed(2);
+document.body.appendChild(printedTotal);
+
+//input adds new element to array
+document.getElementById("submit").onclick = function addToList(){
+	var newItemName = document.getElementById('newItemName').value;
+	var newItemPrice = document.getElementbyId('newItemPrice').value;
+};
+
+var newElement = {name: newItemName, price: newItemPrice};
+
+groceryList.push(newElement);
+
